@@ -81,7 +81,7 @@ func NewSession(ctx context.Context, p *goja.Program) (session *Session, err err
 		// Global reads can invoke JS accessors, so they share the initialization's
 		// interrupt boundary rather than executing after its callback is disarmed.
 		method := s.vm.Get("__extractMethodSource")
-		if method == nil || method.ExportType() != reflect.TypeOf("") || !validMethodShape(method.String()) {
+		if method == nil || method.ExportType() != reflect.TypeFor[string]() || !validMethodShape(method.String()) {
 			return ErrUnsupported
 		}
 		var ok bool
@@ -128,7 +128,7 @@ func (s *Session) run(ctx context.Context, fn func() error) (err error) {
 			return e
 		}
 		var exception *goja.Exception
-		if errors.As(e, &exception) && exception.Value().ExportType() == reflect.TypeOf("") {
+		if errors.As(e, &exception) && exception.Value().ExportType() == reflect.TypeFor[string]() {
 			switch exception.Value().String() {
 			case "ytx:ambiguous":
 				return ErrAmbiguous
@@ -151,7 +151,7 @@ func (s *Session) apply(ctx context.Context, fn goja.Callable, input string) (ou
 			return e
 		}
 		// Check primitive type before Export: exporting an object can traverse it.
-		if v == nil || goja.IsNull(v) || goja.IsUndefined(v) || v.ExportType() != reflect.TypeOf("") {
+		if v == nil || goja.IsNull(v) || goja.IsUndefined(v) || v.ExportType() != reflect.TypeFor[string]() {
 			return ErrExecution
 		}
 		value := v.String()

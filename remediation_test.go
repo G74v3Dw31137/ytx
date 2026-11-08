@@ -288,7 +288,7 @@ func TestRemediationCacheBoundsAndRetry(t *testing.T) {
 	if e != nil {
 		t.Fatal(e)
 	}
-	for i := 0; i < maxPlayerAssets; i++ {
+	for i := range maxPlayerAssets {
 		if _, e := c.playerAsset(context.Background(), strings.Replace(cacheURL, "/id/", "/v"+string(rune('a'+i))+"/", 1)); e != nil {
 			t.Fatal(e)
 		}

@@ -13,7 +13,9 @@ import (
 // snapshot, complete Player response and exact Player JS for later resolution.
 // It holds no client or runtime lease and remains readable after Close. Keeping
 // many results can retain substantial memory. URLs/proofs can expire remotely.
-type ownerToken struct{ marker byte }
+type ownerToken struct {
+	_ byte
+}
 
 type Video struct {
 	owner    *ownerToken
@@ -137,7 +139,7 @@ func enrichFormat(f *Format) {
 	mediaType, params, err := mime.ParseMediaType(f.MIMEType)
 	if err == nil {
 		if value := params["codecs"]; value != "" {
-			for _, codec := range strings.Split(value, ",") {
+			for codec := range strings.SplitSeq(value, ",") {
 				f.Codecs = append(f.Codecs, strings.TrimSpace(codec))
 			}
 		}

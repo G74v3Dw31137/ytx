@@ -83,7 +83,7 @@ func TestHistoricalCombinedSignatureThenN(t *testing.T) {
 	for _, path := range historicalPaths {
 		t.Run(path, func(t *testing.T) {
 			p := compiled(t, string(historical(t, path)))
-			for i := 0; i < 2; i++ {
+			for range 2 {
 				s, e := NewSession(context.Background(), p)
 				if e != nil {
 					t.Fatal(e)

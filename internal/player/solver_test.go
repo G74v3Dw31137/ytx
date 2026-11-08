@@ -91,7 +91,7 @@ func TestFreshRuntimeState(t *testing.T) {
 	src := strings.Replace(fixture(t), "var constants=", "var calls=0;var constants=", 1)
 	src = strings.Replace(src, `"ok_"+this.values.n`, `"ok_"+(++calls)+"_"+this.values.n`, 1)
 	p := compiled(t, src)
-	for i := 0; i < 3; i++ {
+	for range 3 {
 		s, e := NewSession(context.Background(), p)
 		if e != nil {
 			t.Fatal(e)

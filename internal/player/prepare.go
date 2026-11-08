@@ -289,8 +289,8 @@ func validMethodShape(source string) bool {
 		}
 		switch v.Kind() {
 		case reflect.Struct:
-			for i := 0; i < v.NumField(); i++ {
-				visit(v.Field(i))
+			for _, field := range v.Fields() {
+				visit(field)
 			}
 		case reflect.Slice:
 			for i := 0; i < v.Len(); i++ {

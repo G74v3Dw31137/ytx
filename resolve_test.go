@@ -123,7 +123,7 @@ func TestResolveOwnership(t *testing.T) {
 		}
 	}
 	var wg sync.WaitGroup
-	for i := 0; i < 12; i++ {
+	for range 12 {
 		wg.Go(func() {
 			if _, e := c.Resolve(context.Background(), v, formats[0]); e != nil {
 				t.Error(e)
@@ -292,7 +292,7 @@ func TestResolveFreshRuntimeAndNoMutation(t *testing.T) {
 	src = strings.Replace(src, `"ok_"+this.values.n`, `"ok_"+(++count)+this.values.n`, 1)
 	v := resolveVideo(t, c, resolveAsset(t, src), cipherFormat(mediaBase+"?n=x", "abc", ""))
 	before := v.Formats()
-	for i := 0; i < 3; i++ {
+	for range 3 {
 		out, e := c.Resolve(context.Background(), v, before[0])
 		if e != nil {
 			t.Fatal(e)
@@ -321,7 +321,7 @@ func TestGetVideoResolveNoAdditionalCalls(t *testing.T) {
 	f.base.mu.Lock()
 	baseBefore := fmt.Sprint(f.base.calls)
 	f.base.mu.Unlock()
-	for i := 0; i < 3; i++ {
+	for range 3 {
 		if _, e := c.Resolve(context.Background(), v, v.Formats()[0]); e != nil {
 			t.Fatal(e)
 		}

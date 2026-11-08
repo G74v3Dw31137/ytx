@@ -110,7 +110,7 @@ func newMediaQuery(raw string) (*mediaQuery, error) {
 	if prefix == "" {
 		return nil, ErrInvalidURL
 	}
-	for _, label := range strings.Split(prefix, ".") {
+	for label := range strings.SplitSeq(prefix, ".") {
 		if label == "" || len(label) > 63 || label[0] == '-' || label[len(label)-1] == '-' {
 			return nil, ErrInvalidURL
 		}
@@ -175,7 +175,7 @@ func (q *mediaQuery) validate(sp string, cipher bool) error {
 			if value == "" {
 				return ErrInvalidURL
 			}
-			for _, name := range strings.Split(value, ",") {
+			for name := range strings.SplitSeq(value, ",") {
 				if !signatureName.MatchString(name) {
 					return ErrInvalidURL
 				}

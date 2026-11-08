@@ -59,7 +59,7 @@ func TestPreparationIdentityAndResidency(t *testing.T) {
 		t.Fatal("different bytes shared")
 	}
 	old := resolveVideo(t, c, a, Format{URL: mediaBase + "?n=old"})
-	for i := 0; i < maxPlayerAssets+1; i++ {
+	for i := range maxPlayerAssets + 1 {
 		next := resolveAsset(t, string(a.source)+fmt.Sprintf("\n// %d", i))
 		if _, e = c.preparedPlayer(context.Background(), next); e != nil {
 			t.Fatal(e)
@@ -105,7 +105,7 @@ func TestConcurrentPreparationAndWaiterCancellation(t *testing.T) {
 	defer cancel()
 	go func() { p, e := c.preparedPlayer(ctx, a); results <- result{p, e} }()
 	<-started
-	for i := 0; i < 9; i++ {
+	for range 9 {
 		go func() { p, e := c.preparedPlayer(context.Background(), a); results <- result{p, e} }()
 	}
 	await(t, func() bool { return waiterCount(c) == 10 })
@@ -117,7 +117,7 @@ func TestConcurrentPreparationAndWaiterCancellation(t *testing.T) {
 	await(t, func() bool { return waiterCount(c) == 9 })
 	close(release)
 	var p *goja.Program
-	for i := 0; i < 9; i++ {
+	for range 9 {
 		r := <-results
 		if r.e != nil {
 			t.Fatal(r.e)
@@ -186,7 +186,7 @@ func TestPreparationNegativeCacheAndRuntimeFailure(t *testing.T) {
 		return player.Compile(ctx, b)
 	}
 	bad := resolveAsset(t, "invalid js(")
-	for i := 0; i < 3; i++ {
+	for range 3 {
 		if _, e := c.preparedPlayer(context.Background(), bad); !errors.Is(e, ErrUnsupportedPlayerJS) {
 			t.Fatal(e)
 		}
@@ -234,7 +234,7 @@ func TestRuntimeAdmissionAndCanceledWaiter(t *testing.T) {
 		return player.NewSession(ctx, p)
 	}
 	var wg sync.WaitGroup
-	for i := 0; i < 6; i++ {
+	for range 6 {
 		wg.Go(func() {
 			if _, e := c.Resolve(context.Background(), v, f); e != nil {
 				t.Error(e)
@@ -279,7 +279,7 @@ func TestEvictionDuringResolution(t *testing.T) {
 	done := make(chan error, 1)
 	go func() { _, e := c.Resolve(context.Background(), v, v.Formats()[0]); done <- e }()
 	<-entered
-	for i := 0; i < maxPlayerAssets; i++ {
+	for i := range maxPlayerAssets {
 		b := resolveAsset(t, string(a.source)+fmt.Sprintf("\n// eviction %d", i))
 		if _, e := c.preparedPlayer(context.Background(), b); e != nil {
 			t.Fatal(e)
@@ -380,8 +380,7 @@ func TestDistinctPreparationAdmission(t *testing.T) {
 	go func() { _, e := c.preparedPlayer(context.Background(), a); first <- e }()
 	<-started
 	var wg sync.WaitGroup
-	for i := 0; i < 8; i++ {
-		i := i
+	for i := range 8 {
 		wg.Go(func() {
 			different := resolveAsset(t, string(a.source)+fmt.Sprintf("\n// distinct %d", i))
 			if _, e := c.preparedPlayer(context.Background(), different); e != nil {
@@ -434,7 +433,7 @@ func TestSameDigestReadmissionDuringPreparation(t *testing.T) {
 	go func() { p, e := c.preparedPlayer(context.Background(), a); done <- result{p, e} }()
 	<-started
 	c.mu.Lock()
-	for i := 0; i < maxPlayerAssets; i++ {
+	for i := range maxPlayerAssets {
 		b := resolveAsset(t, string(a.source)+fmt.Sprintf("\n// blocked %d", i))
 		c.admitAsset(b)
 	}
@@ -485,7 +484,7 @@ func TestHistoricalReadmissionCannotPublishAcquisition(t *testing.T) {
 	}
 	old := resolveVideo(t, c, acquired, Format{URL: mediaBase + "?n=old"})
 	c.mu.Lock()
-	for i := 0; i < maxPlayerAssets; i++ {
+	for i := range maxPlayerAssets {
 		b := resolveAsset(t, string(a.source)+fmt.Sprintf("\n// evict %d", i))
 		b.url = fmt.Sprintf("https://www.youtube.com/s/player/evict%d/base.js", i)
 		c.admitAcquiredAsset(b)
@@ -504,9 +503,9 @@ func TestHistoricalReadmissionCannotPublishAcquisition(t *testing.T) {
 		t.Fatal("old Video failed", e)
 	}
 	var wg sync.WaitGroup
-	for i := 0; i < 8; i++ {
+	for range 8 {
 		wg.Go(func() {
-			for j := 0; j < 20; j++ {
+			for range 20 {
 				got, e := c.playerAsset(context.Background(), a.url)
 				if e != nil || got.sha256 != b.sha256 || got.sts != b.sts || string(got.source) != string(b.source) {
 					t.Error("stale acquisition", e)
