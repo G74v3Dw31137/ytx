@@ -10,7 +10,7 @@ import (
 )
 
 // Narrow adaptation of yt-dlp/ejs modifyPlayer and extract/createSolver.
-// See THIRD_PARTY.md and notices/ejs.txt. Unknown wrappers fail closed.
+// See THIRD_PARTY.md. Unknown wrappers fail closed.
 func nodeText(source string, n ast.Node) string { return source[int(n.Idx0())-1 : int(n.Idx1())-1] }
 func markedURLFactory(fn *ast.FunctionLiteral) bool {
 	if fn.Async || fn.Generator || fn.ParameterList == nil || len(fn.ParameterList.List) != 3 || fn.ParameterList.Rest != nil {
