@@ -1,0 +1,364 @@
+[
+  {
+    "kind": "signature",
+    "id": "signature-empty",
+    "mode": "fresh",
+    "input": "",
+    "status": "null"
+  },
+  {
+    "kind": "signature",
+    "id": "signature-one",
+    "mode": "fresh",
+    "input": "a",
+    "status": "null"
+  },
+  {
+    "kind": "signature",
+    "id": "signature-short",
+    "mode": "fresh",
+    "input": "abc",
+    "status": "string",
+    "output": "b"
+  },
+  {
+    "kind": "signature",
+    "id": "signature-repeat",
+    "mode": "fresh",
+    "input": "aaaaaaaaaaaaaaaa",
+    "status": "string",
+    "output": "aaaaaaaaaaaaaa"
+  },
+  {
+    "kind": "signature",
+    "id": "signature-distinct",
+    "mode": "fresh",
+    "input": "0123456789abcdef",
+    "status": "string",
+    "output": "823456719abcde"
+  },
+  {
+    "kind": "signature",
+    "id": "signature-mixed",
+    "mode": "fresh",
+    "input": "aB3dE6fG9hJ0kL",
+    "status": "string",
+    "output": "k3dE6fG9hJ0B"
+  },
+  {
+    "kind": "signature",
+    "id": "signature-urlsafe",
+    "mode": "fresh",
+    "input": "Ab-_09.Z~xy12",
+    "status": "string",
+    "output": "_-b09.Z~xy1"
+  },
+  {
+    "kind": "signature",
+    "id": "signature-escaping",
+    "mode": "fresh",
+    "input": "A+B /%&=?#Z",
+    "status": "string",
+    "output": "#B /%&=?+"
+  },
+  {
+    "kind": "signature",
+    "id": "signature-lcg-32",
+    "mode": "fresh",
+    "input": "1D3DABLz7F0hLak75Fqe1_VpWkZVlszD",
+    "status": "string",
+    "output": "L3DABDz7F0hLak75Fqe1_VpWkZVlsz"
+  },
+  {
+    "kind": "signature",
+    "id": "signature-lcg-64",
+    "mode": "fresh",
+    "input": "baKWnzWC0xElp3aVyHX5_yecMQV-gwJtZRUUnSASXmtOTLxJo9A0ImMDQYtCL-Em",
+    "status": "string",
+    "output": "nKWnzWC0xElp3aVyHX5_yecMQV-gwJtZRUUaSASXmtOTLxJo9A0ImMDQYtCL-E"
+  },
+  {
+    "kind": "signature",
+    "id": "signature-lcg-100",
+    "mode": "fresh",
+    "input": "4PdmJFTLtM3GR-zBiOr3VClIqmrHt_uW_9t0V0VV-Mqzq2njoiiqwvzRjiW2PaOl3CMmSIQYRNO-ndVYEhs1hT9HCy1353s6nGCk",
+    "status": "string",
+    "output": "VdmJFTLtM3GR-zBiOr3VClIqmrHt_uW_9t0P0VV-Mqzq2njoiiqwvzRjiW2PaOl3CMmSIQYRNO-ndVYEhs1hT9HCy1353s6nGC"
+  },
+  {
+    "kind": "signature",
+    "id": "signature-lcg-102",
+    "mode": "fresh",
+    "input": "InK7v3sPPbFI70Q_vZKSRASyy-Q-YxXVA8NngzKNqW_aXCYyjmkZVz0OCYCZSsUiCsgEqoxiC4L4g0L0FkSGY0j1ysKzce_zVhL6Y-",
+    "status": "string",
+    "output": "gK7v3sPPbFI70Q_vZKSRASyy-Q-YxXVA8NnnzKNqW_aXCYyjmkZVz0OCYCZSsUiCsgEqoxiC4L4g0L0FkSGY0j1ysKzce_zVhL6Y"
+  },
+  {
+    "kind": "signature",
+    "id": "signature-lcg-104",
+    "mode": "fresh",
+    "input": "q0doxIexxuc6c_iqnNKiw0_wiwCCWxwd7sDP5zYhSIwQKt79I_Rj8DCJDBQ4JQ7uuy9TrhWs2pLPk4pWOyQW3KuRsNIpsBAYJuTfP6h7",
+    "status": "string",
+    "output": "5doxIexxuc6c_iqnNKiw0_wiwCCWxwd7sDP0zYhSIwQKt79I_Rj8DCJDBQ4JQ7uuy9TrhWs2pLPk4pWOyQW3KuRsNIpsBAYJuTfP6h"
+  },
+  {
+    "kind": "signature",
+    "id": "signature-lcg-106",
+    "mode": "fresh",
+    "input": "l7yeyH3bBQOjnvKwj-yAHqIEWHMYulB1nkwl8Er2p_UzVbfPy6Vii0aZcmwoOM9CFNKMKVOPPpqsK20Vgq55FG__jzJ25VeLFeL8kjnN50",
+    "status": "string",
+    "output": "8yeyH3bBQOjnvKwj-yAHqIEWHMYulB1nkwl7Er2p_UzVbfPy6Vii0aZcmwoOM9CFNKMKVOPPpqsK20Vgq55FG__jzJ25VeLFeL8kjnN5"
+  },
+  {
+    "kind": "signature",
+    "id": "signature-lcg-108",
+    "mode": "fresh",
+    "input": "X5MnSq11os5K-eyWdq1pr3w-5cTW-YwJj_lXB35FnjEmgfT30tMwtuPXcVdWdY9PXobvIj0ABHvDtpN-XmFRrZoP9OMLK2mw7b4VwWuP7_DJ",
+    "status": "string",
+    "output": "BMnSq11os5K-eyWdq1pr3w-5cTW-YwJj_lX535FnjEmgfT30tMwtuPXcVdWdY9PXobvIj0ABHvDtpN-XmFRrZoP9OMLK2mw7b4VwWuP7_D"
+  },
+  {
+    "kind": "signature",
+    "id": "signature-lcg-128",
+    "mode": "fresh",
+    "input": "skoSN9n2vfFPkvmcNZ1SWBDxA4vagzGgm5scfb8F-os_Yg1yvpwexAEtBy_J2MCwiPiEVnLnidnHiK_13Ph8UDDw6smEFx-gpOQy2JcEjk9OJUONuyPUGvIh0MsyXKBZ",
+    "status": "string",
+    "output": "foSN9n2vfFPkvmcNZ1SWBDxA4vagzGgm5sckb8F-os_Yg1yvpwexAEtBy_J2MCwiPiEVnLnidnHiK_13Ph8UDDw6smEFx-gpOQy2JcEjk9OJUONuyPUGvIh0MsyXKB"
+  },
+  {
+    "kind": "signature",
+    "id": "signature-lcg-256",
+    "mode": "fresh",
+    "input": "Ce_OLp3DIo29Wnphc6CNPubp38a8x_VD2o4_bwkOaOZ9RpXbIPCQ4nEwKj2Ld5BGMUBuvGrLgAwzBEih7aXGJCLd2pKEjfNKNIjDPRUjjlCKugRc8CJVJo4aC3cSLaB2BunmC7o-rlXphjs0UwglBATN302ccRlzvtU_QrtE_p43i37RLLkg4ylfcJeJesBpgux1CJscoYrd4DHao7ds3m046ceCaTdAbXIyg-uwta5DswW5zoTzGFKAZX9vYvBg",
+    "status": "string",
+    "output": "b_OLp3DIo29Wnphc6CNPubp38a8x_VD2o4_ewkOaOZ9RpXbIPCQ4nEwKj2Ld5BGMUBuvGrLgAwzBEih7aXGJCLd2pKEjfNKNIjDPRUjjlCKugRc8CJVJo4aC3cSLaB2BunmC7o-rlXphjs0UwglBATN302ccRlzvtU_QrtE_p43i37RLLkg4ylfcJeJesBpgux1CJscoYrd4DHao7ds3m046ceCaTdAbXIyg-uwta5DswW5zoTzGFKAZX9vYvB"
+  },
+  {
+    "kind": "signature",
+    "id": "signature-lcg-512",
+    "mode": "fresh",
+    "input": "pSgcxx5mXYqRGlxU27Pbs3tfAiD4fn2wSHBc-LXnt5HvNKgU2bXMxin83j4E4jCadczZPyOb4lWEJIsg-w0wfw-AHEk8qMuES8-9qQop_Fh6DFbiTjvt7I8T4sPJ-JDX6MquaNs7LAu3Ds3AAbPtQTodREBR7CH7d1_WlPi3k-HjQiGjLAbWj3KGbzC8qgEXCgFbUARGRozozRSz87dR_eq1eha0TKBVy1EluHDQbk5tzgiYczcFqwQTh3Rf9oFb0aEe8N_8JdjZZ396zQfcsUEIsbwnxjaSR5OsF5N0k44Vs_tAI7w8OyO8I49y2hHiR5o5Sz1ezfAJ2f5TkaWOYy2X9zCoVNUy7DcrqjAj_5Dd8_pbOYZ6R9EAS2FzVMJsY-wrWy0rQuJ4IIFAPaBoC6AhQoQ6_Iu2vSugeHaetnaEihVqvKXAyRzg-xpkaoL5Ind0JL7jeL-nRyhA1Phpqqjml6aavUodtmENgldksC-KekxspRoMyuZaNqqEG1NK",
+    "status": "string",
+    "output": "-gcxx5mXYqRGlxU27Pbs3tfAiD4fn2wSHBcSLXnt5HvNKgU2bXMxin83j4E4jCadczZPyOb4lWEJIsg-w0wfw-AHEk8qMuES8-9qQop_Fh6DFbiTjvt7I8T4sPJ-JDX6MquaNs7LAu3Ds3AAbPtQTodREBR7CH7d1_WlPi3k-HjQiGjLAbWj3KGbzC8qgEXCgFbUARGRozozRSz87dR_eq1eha0TKBVy1EluHDQbk5tzgiYczcFqwQTh3Rf9oFb0aEe8N_8JdjZZ396zQfcsUEIsbwnxjaSR5OsF5N0k44Vs_tAI7w8OyO8I49y2hHiR5o5Sz1ezfAJ2f5TkaWOYy2X9zCoVNUy7DcrqjAj_5Dd8_pbOYZ6R9EAS2FzVMJsY-wrWy0rQuJ4IIFAPaBoC6AhQoQ6_Iu2vSugeHaetnaEihVqvKXAyRzg-xpkaoL5Ind0JL7jeL-nRyhA1Phpqqjml6aavUodtmENgldksC-KekxspRoMyuZaNqqEG1N"
+  },
+  {
+    "kind": "signature",
+    "id": "signature-fixture",
+    "mode": "fresh",
+    "input": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "status": "string",
+    "output": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  {
+    "kind": "signature",
+    "id": "signature-bmp",
+    "mode": "fresh",
+    "input": "a\u00e9\u4e2dZ",
+    "status": "string",
+    "output": "\u4e2d\u00e9"
+  },
+  {
+    "kind": "signature",
+    "id": "signature-astral",
+    "mode": "fresh",
+    "input": "a\ud83d\ude00b\ud834\udd1eZ",
+    "status": "string",
+    "output": "\ud83d\ude00b\ud834\udd1e"
+  },
+  {
+    "kind": "n",
+    "id": "n-empty",
+    "mode": "fresh",
+    "input": "",
+    "status": "null"
+  },
+  {
+    "kind": "n",
+    "id": "n-one",
+    "mode": "fresh",
+    "input": "a",
+    "status": "null"
+  },
+  {
+    "kind": "n",
+    "id": "n-short",
+    "mode": "fresh",
+    "input": "abc",
+    "status": "null"
+  },
+  {
+    "kind": "n",
+    "id": "n-repeat",
+    "mode": "fresh",
+    "input": "aaaaaaaaaaaaaaaa",
+    "status": "string",
+    "output": "htt-5siuuq4t"
+  },
+  {
+    "kind": "n",
+    "id": "n-distinct",
+    "mode": "fresh",
+    "input": "0123456789abcdef",
+    "status": "string",
+    "output": "DzKcYyoIqn2s"
+  },
+  {
+    "kind": "n",
+    "id": "n-mixed",
+    "mode": "fresh",
+    "input": "aB3dE6fG9hJ0kL",
+    "status": "string",
+    "output": "oWuR1zZwoh"
+  },
+  {
+    "kind": "n",
+    "id": "n-urlsafe",
+    "mode": "fresh",
+    "input": "Ab-_09.Z~xy12",
+    "status": "string",
+    "output": "ehSrYSatu"
+  },
+  {
+    "kind": "n",
+    "id": "n-escaping",
+    "mode": "fresh",
+    "input": "A+B /%&=?#Z",
+    "status": "string",
+    "output": "TwPfSjt"
+  },
+  {
+    "kind": "n",
+    "id": "n-lcg-8",
+    "mode": "fresh",
+    "input": "k2tUq9JH",
+    "status": "string",
+    "output": "Lc4O"
+  },
+  {
+    "kind": "n",
+    "id": "n-lcg-12",
+    "mode": "fresh",
+    "input": "f1gVQeOUV50R",
+    "status": "string",
+    "output": "FqPoxkX-"
+  },
+  {
+    "kind": "n",
+    "id": "n-lcg-13",
+    "mode": "fresh",
+    "input": "RFem9phKmyDn1",
+    "status": "string",
+    "output": "v3yVh5iv1"
+  },
+  {
+    "kind": "n",
+    "id": "n-lcg-14",
+    "mode": "fresh",
+    "input": "Afxw7I1_LtvwI-",
+    "status": "string",
+    "output": "fuUvQnnD8Q"
+  },
+  {
+    "kind": "n",
+    "id": "n-lcg-15",
+    "mode": "fresh",
+    "input": "h-uOgPV5w9gHTYz",
+    "status": "string",
+    "output": "OEuFcZLMNhc"
+  },
+  {
+    "kind": "n",
+    "id": "n-lcg-16",
+    "mode": "fresh",
+    "input": "QepqiM5IhWSsuCGK",
+    "status": "string",
+    "output": "BZ9GrVakZosx"
+  },
+  {
+    "kind": "n",
+    "id": "n-lcg-17",
+    "mode": "fresh",
+    "input": "K6vZ8h2IxiX2kJjh-",
+    "status": "string",
+    "output": "rLkHKKNsA-k23"
+  },
+  {
+    "kind": "n",
+    "id": "n-lcg-18",
+    "mode": "fresh",
+    "input": "VIe-MOLbRjBp0ZN7Jt",
+    "status": "string",
+    "output": "xBgY8RtrDSIJ4p"
+  },
+  {
+    "kind": "n",
+    "id": "n-lcg-19",
+    "mode": "fresh",
+    "input": "gI7LFQiQTASQjT1ZE7b",
+    "status": "string",
+    "output": "7eZz46ihwbY3awv"
+  },
+  {
+    "kind": "n",
+    "id": "n-lcg-20",
+    "mode": "fresh",
+    "input": "3sAQ4xouy4X0Dt4YZ0dY",
+    "status": "string",
+    "output": "7QydXejcR3VekmkD"
+  },
+  {
+    "kind": "n",
+    "id": "n-lcg-32",
+    "mode": "fresh",
+    "input": "zgjXnhZlkChf7UX5ZkxYY0ol3oWel-gu",
+    "status": "string",
+    "output": "vjYWfLf0DFp5klg1vyLAexHBqIAS"
+  },
+  {
+    "kind": "n",
+    "id": "n-lcg-64",
+    "mode": "fresh",
+    "input": "FDV_vEWPzC4Biqo1QDOaUn0CR3p26KgKRne0wzUZMrIp1W7si0Gbt7FzaE4HeBnW",
+    "status": "string",
+    "output": "SlexuoFrdssiJd0L9UxtE_ITHU0MGfkE1pQcIe_dLRzn095ns3NqdlzwTjxA"
+  },
+  {
+    "kind": "n",
+    "id": "n-lcg-128",
+    "mode": "fresh",
+    "input": "dxGczWat3ma-8AYFaihFsYiia2N7ZJ84xLWhAWvx9a0q-RHq9yn-YlT1Y2v40MoZXcUpeadNlvfTEwQBWOfv6KgWdrmn3yxgUMKdWKrr4OkiWG7zrdT_avRrw96wphg3",
+    "status": "string",
+    "output": "xK0sRooT36WPKepj27T4hI197sBOR-4_cFuc3SPxPe5XS1ookvX1ysT3DJKUFOXZXxnKLJrFmxOA5zLaIHjkX15tHa6SQrNEG0KLypEuCdnuYjnBzv1CIegV7O54"
+  },
+  {
+    "kind": "n",
+    "id": "n-lcg-256",
+    "mode": "fresh",
+    "input": "yE-kvOhx-eK_76QoEHLY_9udaUz7TD9E5r6oyPHJ-HYS70YIq1Ngya_TjZZw8ARwxqEPn0lZBxYCgcZ6lOiB6xM3Sz12t-ijgnmCVmDKOFR4vbco86ShgndvvLN2un5FRMnpELqDuqKdyYq44ilorm6kEHqYGif-KBPs-NgupINWx7JTgtkAkVs-WSVE-Ya1UsmyIUuxGIhO0tDh9DVPTd5lvRUidw0T230ltGd1NROsCVfJXNC__lqAXuwZrS0A",
+    "status": "string",
+    "output": "_tXdin3SkduBN1n7R8hozZi_bKrXsINokwd26wuLXiO6HCJQDMhQJk30wgoGNb3U9T0WhujJlkEg_4VNIXT7gplnPoA-BbG-8MNqL6sPP-xAmSRpsvJ5FNC4wMV_lxUTVEJ52edUh_CIUKn4g8zgxOCjLqQBqbC2eoeyU7dh1uZpjDg-ltvSkAztGCIm_bOspgJGAIEjY3DNLwFCiiGkdbOSNOaZXb5Pb06zzz6rPkaPFUWGmIpcDlssXKc3"
+  },
+  {
+    "kind": "n",
+    "id": "n-fixture",
+    "mode": "fresh",
+    "input": "0123456789abcdef",
+    "status": "string",
+    "output": "DzKcYyoIqn2s"
+  },
+  {
+    "kind": "n",
+    "id": "n-bmp",
+    "mode": "fresh",
+    "input": "a\u00e9\u4e2dZ",
+    "status": "null"
+  },
+  {
+    "kind": "n",
+    "id": "n-astral",
+    "mode": "fresh",
+    "input": "a\ud83d\ude00b\ud834\udd1eZ",
+    "status": "string",
+    "output": "uPu"
+  }
+]
